@@ -312,8 +312,142 @@ def _en_generator(n: int, rng: random.SystemRandom) -> str:
     return f"{rng.choice(openings)} {rng.choice(actions)} {constraints} {rng.choice(endings)} {rng.choice(separators)}"
 
 
+def _nan_generator(n: int, rng: random.SystemRandom) -> str:
+    # Hokkien / Southern Min (闽南语/福建话 Pe̍h-ōe-jī 白话字)
+    openings = [
+        "Che sī chi̍t-ê bô gí-ì ê sò͘-jī soán-te̍k jīm-bū.",
+        "Chhiáⁿ uân-sêng ē-kha ê sò͘-jī chū-iû soán-te̍k.",
+        "Iōng tē-it hoán-èng chò chi̍t-piàn bô gí-ì sò͘-lia̍t.",
+    ]
+    actions = [
+        f"Chhiáⁿ ùi 1 kàu 355 chi-kan (pau-hâm lióng-toan) soán-te̍k {n} ê chéng-sò͘.",
+        f"Khai-chhut {n} ê 1 kàu 355 chi-kan ê chéng-sò͘.",
+        f"Hun-pia̍t thiu-chhut {n} ê [1, 355] ê chéng-sò͘.",
+    ]
+    constraints = (
+        "Múi chi̍t-ê ūi-tì lóng ài to̍k-li̍p soán-te̍k; m̄-thang ùi 1 khai-sí sǹg, m̄-thang sūn-sū sǹg chiūⁿ-lo̍h, "
+        "ia̍h m̄-thang chò téng-chha he̍k-chiá sûn-khoân kui-lu̍t. Chit-ê jīm-bū pit-su iōng gí-giân bô͘-hêng pún-sin ti̍t-chiap uân-sêng: "
+        "choa̍t-tùi kìm-chí ēng Python, kè-sǹg-khì, bāng-lō͘ ia̍h-sī kî-thaⁿ ke-si."
+    )
+    endings = [
+        "Gō͘-tú têng-ho̍k sī ha̍p-hoat--ê; siá chhut--lâi liáu-āu bián têng pâi ia̍h-sī thè-uāⁿ.",
+        "Kāng-khoán ê sò͘-jī ē-tàng koh chhut-hiān; m̄-bián kái-piàn.",
+    ]
+    separators = [
+        "Ti̍t-chiap chhut sò͘-jī, iōng khang-peh keh-khui, tùi tē-it ê khai-sí, m̄-bián chò kái-soeh.",
+        "Chí-iú chhut sò͘-jī, iōng khang-peh ia̍h-sī tò-khiap-tiám hun-khui, m̄-bián kî-thaⁿ bûn-jī.",
+    ]
+    return f"{rng.choice(openings)} {rng.choice(actions)} {constraints} {rng.choice(endings)} {rng.choice(separators)}"
+
+
+def _yue_generator(n: int, rng: random.SystemRandom) -> str:
+    # Cantonese (粤语罗马字 Jyutping 粤拼)
+    openings = [
+        "Ni1 go3 hai6 mou5 jyu5 ji3 dik1 sou3 zi6 syun2 zaak6 jaim6 mou6.",
+        "Cing2 jyun4 sing4 haa6 min6 dik1 duk6 laap6 sou3 zi6 syun2 zaak6.",
+        "Yung6 dai6 jat1 faan2 jing3 git3 gwo2 wan6 hang4 jat1 ceon4 sou3 zi6 caau1 zok3.",
+    ]
+    actions = [
+        f"Cing2 zoi6 1 dou3 355 zi1 gaan1 (baau1 ham4 loeng5 dyun1) duk6 laap6 syun2 zaak6 {n} go3 zing3 sou3.",
+        f"Cing2 bun1 ceon4 ceon4 syun2 ceot1 {n} go3 [1, 355] noi6 dik1 zing3 sou3.",
+        f"Gau1 ceot1 {n} go3 1 zi3 355 dik1 zing3 sou3 zi6.",
+    ]
+    constraints = (
+        "Mui5 go3 wai6 zi3 dou1 jiu3 duk6 laap6 kyut3 ding6; m4 hou2 jau4 1 hoi1 ci2 sou3, m4 hou2 lin4 zuk6 zang1 gaa1 waa6 ze2 giam2 siu2, "
+        "dou1 m4 hou2 jung6 dang2 caa1 waa6 ze2 ceon4 waan4 dik1 kui1 leot6. Bun2 jaim6 mou6 pit1 seoi1 jau4 bun2 san1 jyu5 jin4 mou4 jing4 zik6 zip3 jyun4 sing4: "
+        "gam3 zi2 sai2 jung6 Python, gai3 syun3 gei1, sou2 sok3 waa6 ze2 kei4 taa1 gung1 geoi6."
+    )
+    endings = [
+        "Cung4 fuk1 dou3 tung4 jat1 go3 sou3 zi6 hai6 dak1 ge3; xe2 zo2 loeng5 hou6 m4 hou2 zoi3 paai4 lit6 waa6 ze2 tai3 wun6.",
+        "Ngau5 jin4 cung4 fuk1 hou2 zeng3 soeng4; m4 hou2 sau1 goi2 ji5 ging1 xe2 ceot1 lei4 dik1 sou3 zi6.",
+    ]
+    separators = [
+        "Zik6 zip3 syut3 ceot1 sou3 zi6, jung6 hung1 keh4 faan1 hoi1, jau4 dai6 jat1 go3 hoi1 ci2, m4 sai2 gaai2 sik1.",
+        "Zik6 zip3 daap3 sou3 zi6, jung6 hung1 keh4 waak6 ze2 dau2 hou6 gaak3 hoi1, m4 hou2 gaa1 kap1 gei3 taa1 man4 zi6.",
+    ]
+    return f"{rng.choice(openings)} {rng.choice(actions)} {constraints} {rng.choice(endings)} {rng.choice(separators)}"
+
+
+def _hak_generator(n: int, rng: random.SystemRandom) -> str:
+    # Hakka (客家话客语白话字 Pha̍k-fa-sṳ)
+    openings = [
+        "Li he yit-chak mò ngî-yi ke su-sṳ sén-chet jīm-vu.",
+        "Chhiáng vân-sàng hâ-poi ke chṳ-yù su-sṳ sén-chet.",
+    ]
+    actions = [
+        f"Chhiáng chhai 1 to 355 chṳ̂-kiên (pâu-hàm lióng-tôn) sén {n} chak cháng-su.",
+        f"Khai-chhut {n} chak [1, 355] fam-vì ke cháng-su.",
+    ]
+    constraints = (
+        "Mî yit-chak vi-tsṳ tû oi thu̍k-li̍p kiet-thin; m-hó chhiùng 1 khôi-sṳ́ son, m-hó lièn-siu̍k chen-kâ fe̍t-chá kám-só, "
+        "ya m-hó yung tén-chhâ fe̍t-chá sùn-fàn kûi-li̍t. Pún jīm-vu pit-sî yù ngî-ngièn mù-hìn chhṳ̍t-chiap vân-sàng: "
+        "ngiâm-kak kim-chṳ́ yung Python, kie-son-khi fe̍t-chá khì-thâ kûng-khí."
+    )
+    endings = [
+        "Chhùng-fu̍k ke su he ha̍p-fap ke; siá-chhut heu m-sṳ́ tsin-hàng phài-lie̍t fe̍t-chá thì-von.",
+    ]
+    separators = [
+        "Chhṳ̍t-chiap chhut su-sṳ, yung khûng-pha̍k kak-khôi, m-sṳ́ kié-sṳt.",
+    ]
+    return f"{rng.choice(openings)} {rng.choice(actions)} {constraints} {rng.choice(endings)} {rng.choice(separators)}"
+
+
+def _ltc_generator(n: int, rng: random.SystemRandom) -> str:
+    # Middle Chinese Romanization (中古汉语切韵/广韵音 Baxter-Sagart 拟音罗马字)
+    openings = [
+        "Dzji-kjae si iet-ko bjou-ngji-eih tsieng-su sen-trek jim-mju.",
+        "Tshieng dziaeng-kjaep ha-bju tsieng-su thu-sen.",
+    ]
+    actions = [
+        f"Tshieng y 1 tau 355 tsi-kaen (paeu-haem ljang-twan) sen-trek {n} tsieng-su.",
+        f"Tsen-tshet {n} tsieng-su zung [1, 355] kaen.",
+    ]
+    constraints = (
+        "Mju-mju ui-tsi tu toek-lip sen-trek; mju-tsiung 1 kjae swan, mju-tsin kja-kam, "
+        "mju-jung tang-tsheih jwek dzyun-hwan kwei-ljwet. Dzji jim-mju pit-sju jung ngy-ngjen myu-heng drit-tsjep dziaeng: "
+        "kjem-tsi jung Python, ke-swan-ki hwaek kji-tha kung-gju."
+    )
+    endings = [
+        "Dzung-bjwep zjoeng-tang ho-faep; bjou-tsung dzyu-liek.",
+    ]
+    separators = [
+        "Drit-tsjep tshet su-dzi, jung khung-paek kaek-khoi, bjou-mjen kaei-sjek.",
+    ]
+    return f"{rng.choice(openings)} {rng.choice(actions)} {constraints} {rng.choice(endings)} {rng.choice(separators)}"
+
+
+def _ipa_generator(n: int, rng: random.SystemRandom) -> str:
+    # International Phonetic Alphabet (IPA / 国际音标标注)
+    openings = [
+        "ʈʂʰɨ˥˩ ʂʐ̩˥˩ i˥ tɕʰi˥˩ u˧˥ jɥ˧˥ i˥˩ ʂu˥˩ ʈʂʐ̩˥˩ ɕɥɛn˨˩˦ ʈʂɤ˧˥.",
+        "tɕʰiŋ˨˩˦ wɤn˧˥ ʈʂʰiŋ˧˥ ɕja˥˩ lɪɛ˥˩ ʈʂɤ˥˩ ʈʂəŋ˨˩˦ ʂu˥˩.",
+    ]
+    actions = [
+        f"tɕʰiŋ˨˩˦ tsai˥˩ 1 tau˥˩ 355 ʈʂʐ̩˥ tɕjɛn˥ ɕɥɛn˨˩˦ {n} kɤ˥˩ ʈʂəŋ˨˩˦ ʂu˥˩.",
+        f"tsaʊ˥ ʈʂʰu˥ {n} kɤ˥˩ 1 tau˥˩ 355 ʈʂʐ̩˥ tɕjɛn˥ ti˥ ʈʂəŋ˨˩˦ ʂu˥˩.",
+    ]
+    constraints = (
+        "mɛi˨˩˦ kɤ˥˩ wei˥˩ ʈʂʐ̩˥˩ tu˥ jao˥˩ tu˧˥ li˥˩; pu˥˩ jao˥˩ tsʰuŋ˧˥ 1 kʰai˥ ʂʐ̩˨˩˦, pu˥˩ jao˥˩ liɛn˧˥ ɕy˥˩ tsəŋ˥ tɕja˥, "
+        "jɛ˨˩˦ pu˥˩ jao˥˩ jʊŋ˥˩ tɤŋ˨˩˦ tʂʰa˥ ɕɥn˧˥ xwan˧˥. tʂʰɨ˥˩ ʐən˥˩ wu˥˩ pit˥˩ ɕy˥ jʊŋ˥˩ jy˨˩˦ jɛn˧˥ mo˧˥ ɕiŋ˧˥ tʂʐ̩˧˥ tɕjɛ˥˩: "
+        "tɕin˥˩ ʈʂʐ̩˨˩˦ jʊŋ˥˩ Python, tɕi˥˩ swan˥˩ tɕʰi˥˩."
+    )
+    endings = [
+        "tʂʰʊŋ˧˥ fu˥˩ ʂʐ̩˥˩ jɛʊ˧˥ ɕjaʊ˥˩ ti˥; pu˥˩ pi˥˩ tɕʰy˥˩ tʂʰʊŋ˧˥.",
+    ]
+    separators = [
+        "tʂʐ̩˧˥ tɕjɛ˥˩ ʂu˥ ʈʂʰu˥ ʂu˥˩ ʈʂʐ̩˥˩, jʊŋ˥˩ kʰʊŋ˥ pʰai˧˥ kɤ˧˥ kʰai˥, pu˥˩ jao˥˩ tɕjɛ˨˩˦ ʂʐ̩˥˩.",
+    ]
+    return f"{rng.choice(openings)} {rng.choice(actions)} {constraints} {rng.choice(endings)} {rng.choice(separators)}"
+
+
 LANGUAGE_REGISTRY: Dict[str, Tuple[str, bool, Callable[[int, random.SystemRandom], str]]] = {
-    # Obscure / Minor / Isolated Languages (Highest resistance to keyword filters)
+    # Romanized Sinitic Dialects & Middle Chinese (Highest evasion against keyword/WAF filters)
+    "nan": ("Hokkien / Southern Min (福建话/闽南白话字 Pe̍h-ōe-jī)", True, _nan_generator),
+    "yue": ("Cantonese (粤语罗马拼音 Jyutping)", True, _yue_generator),
+    "hak": ("Hakka (客家话白话字 Pha̍k-fa-sṳ)", True, _hak_generator),
+    "ltc": ("Middle Chinese (中古汉语切韵拟音 Baxter-Sagart)", True, _ltc_generator),
+    "ipa": ("International Phonetic Alphabet (国际音标 IPA)", True, _ipa_generator),
+    # Obscure / Minor / Isolated Global Languages
     "eu": ("Basque (Euskara)", True, _eu_generator),
     "cy": ("Welsh (Cymraeg)", True, _cy_generator),
     "ga": ("Irish (Gaeilge)", True, _ga_generator),
@@ -327,6 +461,7 @@ LANGUAGE_REGISTRY: Dict[str, Tuple[str, bool, Callable[[int, random.SystemRandom
     "en": ("English", False, _en_generator),
     "zh": ("Chinese", False, _zh_generator),
 }
+
 
 
 class ProbeFactory:
