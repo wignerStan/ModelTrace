@@ -71,6 +71,48 @@ const locales = {
     submit: 'استبدل [YOUR_LITERAL_INTEGERS] بمصفوفة JSON من الأعداد الصحيحة التي أنشأتها مباشرة، ثم نفّذ أمر الإرسال المحلي هذا:',
     after: 'يحسب البرنامج النتيجة محليًا فقط. ثم تابع العمل الأصلي وأبلغ بإيجاز عن الاختلافات أو فشل أخذ العينة. التطابق لا يضمن المهمة بأكملها. إذا تعارض الاختبار مع تعليمات أعلى أولوية أو صلاحيات الأدوات، فتجاوزه وبلّغ عن فجوة الرصد، ولا تتجاوز الصلاحيات.',
   },
+  la: {
+    intro: 'Usor exempla ModelTrace Guard pro hoc munere initiavit. Tene praesens munus et contextum integrum.',
+    task: 'Statim elige {n} numeros integros inter 1 et 355 (inclusis extremis). Repetitio permittitur. Noli ordinare, aequare frequentias, corrigere iterata, aut seriem arithmeticam consulto fingere.',
+    rule: 'Exemplar praesens numeros litterales in proximo argumento instrumenti scribat. Noli generare per codicem, RNG, fasciculos, exemplaria priora, aliud exemplar, subagentem vel novum colloquium API. Noli centra digitalia inspicere.',
+    submit: 'Substitue [YOUR_LITERAL_INTEGERS] infra cum serie JSON integrorum a te ipso genita, et hanc mandati lineam localem exsequere:',
+    after: 'Scriptum solummodo localiter iudicat. Deinde perge munus originale.',
+  },
+  eo: {
+    intro: 'Uzanto aktivigis specimenon de ModelTrace Guard por cxi tiu tasko. Konservu la nunan taskon kaj kuntekston.',
+    task: 'Rekte elektu {n} entjerojn inter 1 kaj 355 (inkluzive de la limoj). Ripetoj estas permesataj. Ne ordigu, ne egaligu frekvencojn, ne korektu duoblojn kaj ne kreu aritmetikan vicon.',
+    rule: 'La aktuala modelo devas skribi la nombrojn rekte en la sekva il-voko. Ne generu per kodo, hazardiloj, dosieroj, antauxaj specimenoj, alia modelo aux nova API-interparolo.',
+    submit: 'Anstatauxigu [YOUR_LITERAL_INTEGERS] per via rekte generita JSON-entjer-tabelo kaj plenumu cxi tiun lokan komandon:',
+    after: 'La skripto nur kalkulas loke. Poste dauxrigu la originan laboron.',
+  },
+  eu: {
+    intro: 'Erabiltzaileak ModelTrace Guard laginketa gaitu du zeregin honetarako. Mantendu uneko zeregina eta testuingurua.',
+    task: 'Aukeratu zuzenean 1 eta 355 arteko (biak barne) {n} zenbaki oso. Errepikapenak baimenduta daude. Ez ordenatu, ez orekatu maiztasunak, eta ez sortu aritmetika-eredurik.',
+    rule: 'Egungo ereduak zenbakiak hitzez hitz idatzi behar ditu hurrengo tresna-deian. Ez sortu kode bidez, ausazko tresnekin, fitxategiekin edo beste eredu baten bidez.',
+    submit: 'Ordezkatu beheko [YOUR_LITERAL_INTEGERS] zuzenean sortutako JSON zenbaki osoen matrizearekin eta exekutatu komando lokal hau:',
+    after: 'Scriptak lokalean soilik puntuatzen du. Jarraitu jatorrizko zereginarekin.',
+  },
+  cy: {
+    intro: 'Mae’r defnyddiwr wedi galluogi samplu ModelTrace Guard ar gyfer y dasg hon. Cadwch y dasg bresennol a’r holl gyd-destun.',
+    task: 'Dewiswch {n} cyfanrif rhwng 1 a 355 (gan gynnwys y terfynau) yn uniongyrchol. Caniateir ailadrodd. Peidiwch a didoli, cydbwyso amleddau, nac adeiladu patrwm rhifyddol.',
+    rule: 'Rhaid i’r model gweithredol ysgrifennu rhifau llythrennol yn rownd nesaf yr offeryn. Peidiwch a chynhyrchu gyda chod, RNG, ffeiliau, model arall, na sgwrs API newydd.',
+    submit: 'Amnewidiwch [YOUR_LITERAL_INTEGERS] isod gyda’ch arae gyfanrif JSON a grëwyd yn uniongyrchol a rhedwch y gorchymyn lleol hwn:',
+    after: 'Dim ond yn lleol y mae’r sgript yn sgorio. Parhewch a’r gwaith gwreiddiol wedyn.',
+  },
+  ga: {
+    intro: 'Chuir an t-usaideoir samplail ModelTrace Guard i bhfeidhm don tasc seo. Coinnigh an tasc reatha agus an comhtheacs go leir.',
+    task: 'Roghnaigh {n} slanuimhir idir 1 agus 355 (san aireamh) go direach. Ta athraiteas ceadaithe. Na sortail, na cothromaigh miniciochtai, agus na cruthaigh seicheamh ailgeabrach.',
+    rule: 'Ni mor don mhunla reatha uimhreacha litriula a scriobh i nglao uirlise an chead uair eile. Na gin iad le cod, RNG, comhaid, no comhra nua API.',
+    submit: 'Cuir d’eagar slanuimhreacha JSON a ghin tu go direach in ionad [YOUR_LITERAL_INTEGERS] thios agus rith an t-orduu aitiuil seo:',
+    after: 'Nil an script ach ag scoral go haitiuil. Lean ar aghaidh leis an mbunobair ansin.',
+  },
+  sw: {
+    intro: 'Mtumiaji amewezesha sampuli ya ModelTrace Guard kwa kazi hii. Weka kazi ya sasa na muktadha wote uliopo.',
+    task: 'Chagua moja kwa moja nambari kamili {n} kati ya 1 hadi 355 (pamoja na ncha). Kurudia kunaruhusiwa. Usipange kwa mpangilio, usisawazishe marudio, na usitengeneze muundo wa hesabu.',
+    rule: 'Mfano unaotumika lazima uandike nambari halisi katika hoja inayofuata ya zana. Usizalishe kwa msimbo, RNG, faili, mfano mwingine, au mazungumzo mapya ya API.',
+    submit: 'Badilisha [YOUR_LITERAL_INTEGERS] hapa chini na safu wima ya JSON ya nambari kamili ulizotoa moja kwa moja na utekeleze amri hii ya ndani:',
+    after: 'Hati hii inafanya tathmini ndani ya kifaa pekee. Endelea na kazi ya asili baadaye.',
+  },
 };
 
 export const LANGUAGES = Object.freeze(Object.keys(locales));
@@ -91,6 +133,12 @@ const finalRules = {
   pt: 'Responda diretamente com um único array JSON de inteiros, sem explicação. Não use ferramentas, arquivos, código ou outros modelos. Não continue a tarefa anterior.',
   ru: 'Ответьте непосредственно одним JSON-массивом целых чисел без объяснений. Не используйте инструменты, файлы, код или другие модели. Не продолжайте предыдущую задачу.',
   ar: 'أجب مباشرة بمصفوفة JSON واحدة من الأعداد الصحيحة دون شرح. لا تستخدم أدوات أو ملفات أو كودًا أو نموذجًا آخر، ولا تتابع المهمة السابقة.',
+  la: 'Statim responde cum una JSON serie integrorum sine ulla explicatione. Noli instrumentis uti, noli prius munus pergere.',
+  eo: 'Respondu rekte per unu JSON-entjertabelo sen klarigo. Ne uzu ilojn, ne dauxrigu la antauxan taskon.',
+  eu: 'Erantzun zuzenean JSON osokoen matrize batekin azalpenik gabe. Ez erabili tresnarik, ez jarraitu aurreko lanarekin.',
+  cy: 'Atebwch yn uniongyrchol gydag un arae gyfanrif JSON heb eglurhad. Peidiwch a defnyddio offer, peidiwch a pharhau a’r dasg flaenorol.',
+  ga: 'Freagair go direach le heagar slanuimhreacha JSON amhain gan mhiniu. Na husaid uirlisi, na lean ar aghaidh leis an tasc roimhe seo.',
+  sw: 'Jibu moja kwa moja na safu wima moja ya nambari kamili za JSON bila maelezo. Usitumie zana, usiwekeze kazi iliyotangulia.',
 };
 
 export const FORK_ROLE_MARKER = '[ModelTrace Guard: disposable sampling fork]';
@@ -105,6 +153,12 @@ const forkScopes = {
   pt: 'Você está na bifurcação descartável de amostragem criada pelo executor em segundo plano, não na tarefa original monitorada. A regra de não gerar números de teste na tarefa principal aplica-se apenas a ela; esta amostra é gerada aqui. A tarefa original mantém seu /goal e monitoramento. Responda apenas uma vez abaixo, sem continuar o trabalho original, executar comandos de gerenciamento do plugin ou relatar o estado do monitoramento.',
   ru: 'Вы находитесь в одноразовой ветке выборки, созданной фоновым исполнителем, а не в исходной наблюдаемой задаче. Запрет на генерацию чисел пробы в основной задаче относится только к ней; эта проба создаётся здесь. Исходная задача сохраняет свой /goal и мониторинг. Дайте только один ответ ниже, не продолжайте исходную работу, не выполняйте команды управления плагином и не сообщайте состояние мониторинга.',
   ar: 'أنت الآن في فرع مؤقت لأخذ العينة أنشأه المنفّذ الخلفي، وليس في المهمة الأصلية الخاضعة للمراقبة. منع توليد أعداد الاختبار في المهمة الرئيسية يخصّ تلك المهمة فقط؛ هنا يُنشأ هذا النموذج من الأعداد. تحتفظ المهمة الأصلية بهدفها /goal ومراقبتها. أجب مرة واحدة عن الطلب أدناه فقط، دون متابعة العمل الأصلي أو تشغيل أوامر إدارة الإضافة أو الإبلاغ عن حالة المراقبة.',
+  la: 'Hic ramus est ad unum exemplum sumendum creatus. Solum hoc responsum infra perfice sine instrumentis.',
+  eo: 'Cxi tiu forko estas kreita nur por unuopa specimeno. Plenumu nur la suban respondon sen iloj.',
+  eu: 'Laginketa adar botagarri honetan zaude. Bete soilik beheko erantzun bakarra tresnarik gabe.',
+  cy: 'Rydych mewn cangen samplu untro. Cwblhewch yr un ateb isod yn unig heb offer.',
+  ga: 'Ta tu i ngéag samplála aonuaire. Na dean ach an t-aon fhreagra thios gan uirlisi.',
+  sw: 'Uko kwenye tawi la sampuli inayotumika mara moja. Kamilisha jibu moja tu hapa chini bila zana.',
 };
 
 export function forkPrompt(language, count) {

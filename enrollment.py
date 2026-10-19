@@ -156,6 +156,12 @@ def enroll_manual(
 
 def completion_url(base_url: str, api_format: str = "openai") -> str:
     normalized = base_url.rstrip("/")
+    if api_format == "responses":
+        if normalized.endswith("/responses"):
+            return normalized
+        if normalized.endswith("/v1"):
+            return normalized + "/responses"
+        return normalized + "/v1/responses"
     if api_format == "anthropic":
         if normalized.endswith("/messages"):
             return normalized
@@ -228,6 +234,16 @@ def _request_completion(
             "Accept": "application/json",
             "User-Agent": upstream_user_agent(),
         }
+    elif api_format == "responses":
+        body_data = {"model": api_model, "input": prompt}
+        if system_prompt:
+            body_data["instructions"] = system_prompt
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": upstream_user_agent(),
+        }
     else:
         body_data = {
             "model": api_model,
@@ -279,6 +295,16 @@ def _request_completion(
             raise RuntimeError("模型拒绝生成，本次回答不计入")
         if stop_reason == "max_tokens":
             raise RuntimeError("回答因 max_tokens 截断，本次回答不计入")
+    elif api_format == "responses":
+        if payload.get("status") == "incomplete":
+            raise RuntimeError("回答未正常完成（incomplete），本次回答不计入")
+        content = "".join(
+            part.get("text", "")
+            for item in payload.get("output", [])
+            if item.get("type") == "message"
+            for part in item.get("content", [])
+            if part.get("type") == "output_text"
+        )
     else:
         choice = payload["choices"][0]
         content = choice["message"]["content"]
